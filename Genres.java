@@ -1,12 +1,9 @@
 /**
+ * <h2>The Video Library Rentals System</h2>
  * @author Bill Glinton
  * @author Mandy Achieng
  * @author Dennis Gikunju
- */
-
-/**
- * The Video Library Rentals System
- * Version 2.0
+ * @version 2.0
  */
 
 import javafx.application.Application; 
@@ -26,7 +23,9 @@ import java.sql.*;
 public class Genres extends Application{
 
     /**
-     * Declaring some global DB variables
+     * <p>Declaring some global DB variables where
+     * conn is the Connection variable, url is the database link, user is the username
+     * and pass is the password.</p> 
      */
     Connection conn = null; //Connection variable
     String url = "jdbc:mysql://localhost/vlrs";  //Database link
@@ -34,7 +33,7 @@ public class Genres extends Application{
     String pass = "";   //Password
 
     /**
-     * This method is used to display the entire GUI on a stage
+     * <p>This method is used to display the entire GUI on a stage</P>
      */
     @Override
     public void start(Stage stage) throws Exception {
@@ -46,37 +45,37 @@ public class Genres extends Application{
             System.exit(1);
         }
         /**
-         * Label for Name
+         * <p>Label for Name</P>
          */
         Text label_1 = new Text("Name:");
 
         /**
-         * Label for Registered
+         * <p>Label for Registered</p>
          */
         Text label_2 = new Text("Registered:");
 
         /**
-         * Text Field for Name
+         * <p>Text Field for </p>
          */
         TextField textField1 = new TextField();
 
         /**
-         * Combo Box For Registered
+         * <p>Combo Box For Registered</p>
          */
         ComboBox comboBox = new ComboBox();
 
         /**
-         * Save Button
+         * <p>Save Button</p>
          */
         Button saveButton = new Button("Save");
 
         /**
-         * Remove Button
+         * <p>Remove Button</p>
          */
         Button removeButton = new Button("Remove");
 
         /**
-         * Save Button Event Handler
+         * <p>Save Button Event Handler</p>
          */
         EventHandler<MouseEvent> eventHandler = new EventHandler<MouseEvent>() {
             @Override
@@ -96,127 +95,127 @@ public class Genres extends Application{
         saveButton.addEventHandler(MouseEvent.MOUSE_CLICKED,eventHandler);
 
         /**
-         * Grid Pane
+         * <p>Grid Pane</p>
          */
         GridPane gridPane = new GridPane();
         
         /**
-         * Size of the Pane
+         * <p>Size of the Pane</p>
          */
         gridPane.setMinSize(600, 400);
         
         /**
-         * Padding setting
+         * <p>Padding setting</p>
          */
         gridPane.setPadding(new Insets(10, 10, 10, 10)); 
 
         /**
-         * Vertical Gaps between the Columns Setting
+         * <p>Vertical Gaps between the Columns Setting</p>
          */
         gridPane.setVgap(5); 
 
         /**
-         * Horizontal Gaps between the Columns Setting
+         * <p>Horizontal Gaps between the Columns Setting</p>
          */
         gridPane.setHgap(5);
         
         /**
-         * Grid alignment setting
+         * <p>Grid alignment setting</p>
          */
         gridPane.setAlignment(Pos.CENTER);
 
         /**
-         * Arranging the label_1 Node in the grid
+         * <p>Arranging the label_1 Node in the grid</p>
          */
         gridPane.add(label_1, 0, 0); 
 
         /**
-         * Arranging the textField1 node in the grid
+         * <p>Arranging the textField1 node in the grid</p>
          */
         gridPane.add(textField1, 1, 0);
 
         /**
-         * Arranging the saveButton node in the grid
+         * <p>Arranging the saveButton node in the grid</p>
          */
         gridPane.add(saveButton, 1, 1);
 
         /**
-         * Arranging the label_2 node in the grid
+         * <p>Arranging the label_2 node in the grid</p>
          */
         gridPane.add(label_2,0,2);
 
         /**
-         * Arranging the comboBox node in the grid
+         * <p>Arranging the comboBox node in the grid</p>
          */
         gridPane.add(comboBox,1,2);
 
         /**
-         * Arranging the removeButton in the grid
+         * <p>Arranging the removeButton in the grid</p>
          */
         gridPane.add(removeButton, 1, 3);
 
         /**
-         * saveButton node style
+         * <p>saveButton node style</p>
          */
         saveButton.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
         
         /**
-         * saveButton node size
+         * <p>saveButton node size</p>
          */
         saveButton.setMinSize(300, 30);
 
         /**
-         * removeButton node style
+         * <p>removeButton node style</p>
          */
         removeButton.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
 
         /**
-         * removeButton node size
+         * <p>removeButton node size</p>
          */
         removeButton.setMinSize(300, 30);
 
         /**
-         * comboBox node size
+         * <p>comboBox node size</p>
          */
         comboBox.setMinSize(300, 30);
 
         /**
-         * label_1 node style
+         * <p>label_1 node style</p>
          */
         label_1.setStyle("-fx-font: normal bold 20px 'serif' ");
 
         /**
-         * label_2 node style
+         * <p>label_2 node style</p>
          */
         label_2.setStyle("-fx-font: normal bold 20px 'serif' ");
 
         /**
-         * gridPane node 
+         * <p>gridPane node</p> 
          */
         gridPane.setStyle("-fx-background-color: BEIGE;");
         
         /**
-         * Scene object
+         * <p>Scene object</p>
          */
         Scene scene = new Scene(gridPane);
 
         /**
-         * Stage Title
+         * <p>Stage Title</p>
          */
         stage.setTitle("Genre Registration Page");
 
         /**
-         * Stage scene
+         * <p>Stage scene</p>
          */
         stage.setScene(scene);
 
         /**
-         * Display the contents of the stage
+         * <p>Display the contents of the stage</p>
          */
         stage.show();
     }
     /**
-     * 
+     * <p>Launching the application</p>
      * @param args
      */
     public static void main(String[] args){
